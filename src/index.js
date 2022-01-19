@@ -10,15 +10,15 @@ const MEMBERID = "61e6c3cd6a441b2b5242b78a";
  * 获取当前用户信息
  * @returns 当前用户信息
  */
-function getUserClassInfo() {
+function getUserClassInfo(openId) {
   axios({
     url: "https://a.welife001.com/getUser",
     method: "GET",
     headers: {
-      imprint: "oWRkU0QMZ-Z6DueK_2afvrjl3d0g",
+      imprint: openId,
     },
     data: {
-      openId: "oWRkU0QMZ-Z6DueK_2afvrjl3d0g",
+      openId: openId,
     },
   });
 }
