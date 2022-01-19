@@ -1,0 +1,17 @@
+{
+  "name": "xiaoguanjia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ./src/index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dayjs": "^1.10.7"
+  }
+}
