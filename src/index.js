@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 
 const WX_OPENID = "oWRkU0QMZ-Z6DueK_2afvrjl3d0g";
 
-const MEMBERID = "61e81461800b28070794d672";
+const MEMBERID = "61e6c3cd6a441b2b5242b78a";
 
 /**
  * 获取当前用户信息
@@ -64,13 +64,13 @@ function getFormData() {
 /**
  * 打卡
  */
-function daKa(data) {
+function daKa(data, openId) {
   return axios({
     url: "https://a.welife001.com/applet/notify/feedbackWithOss",
     method: "POST",
     data,
     headers: {
-      imprint: "oWRkU0QMZ-Z6DueK_2afvrjl3d0g",
+      imprint: openId,
     },
   });
 }
@@ -79,7 +79,7 @@ async function main() {
   const [is_feedback, _id] = await checkHasDaka(WX_OPENID, MEMBERID);
   if (is_feedback) {
     let data = getFormData();
-    await daKa(data);
+    await daKa(data, WX_OPENID);
   }
 }
 
