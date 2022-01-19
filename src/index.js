@@ -2,11 +2,24 @@
 const axios = require('axios')
 const dayjs = require('dayjs')
 const data = require('./data.js')
+const users = require('./test.js')
 
-
-const WX_OPENID = "oWRkU0QM-jWq02RlslwZMX_Pwlgk";
-
-const MEMBERID = "61e53466af1dadbab1285b15";
+/**
+ * 获取当前用户信息
+ * @returns 当前用户信息
+ */
+function getUserClassInfo(openId) {
+	axios({
+		url: "https://a.welife001.com/getUser",
+		method: "GET",
+		headers: {
+			imprint: openId,
+		},
+		data: {
+			openId: openId,
+		},
+	});
+}
 
 /**
  * 返回当前用户是否需要签到
@@ -38,9 +51,11 @@ async function checkHasDaka(openId, memberId) {
 	}
 }
 
-function getFormData() {
+/**
+ * 构建打卡表单
+ */
+function getFormData(MEMBERID) {
 	let currentDate = dayjs().format("YYYY-MM-DD");
-	// let currentDate = "2022-01-20";
 	data.daka_day = currentDate;
 	data.invest.dat = currentDate;
 	data.invest.time = new Date().getTime();
@@ -62,20 +77,21 @@ function daKa(data, openId) {
 	});
 }
 
-async function start() {
+async function start(WX_OPENID, MEMBERID) {
 	const [is_feedback, _id] = await checkHasDaka(WX_OPENID, MEMBERID);
 	if (is_feedback) {
-		let data = getFormData();
+		let data = getFormData(MEMBERID);
 		await daKa(data, WX_OPENID);
-		console.log("打卡成功")
 	}
 }
 
 exports.main = async (event, context) => {
 	//event为客户端上传的参数
 	console.log('event : ', event)
-
-	await start()
+	for (let item of Object.keys(users)) {
+		await start(users[item].openid, users[item].member_id)
+		console.log(`${users[item].name}打卡成功`)
+	}
 
 	//返回数据给客户端
 	return {
