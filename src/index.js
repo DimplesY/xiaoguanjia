@@ -79,7 +79,7 @@ async function main() {
   const [is_feedback, _id] = await checkHasDaka(WX_OPENID, MEMBERID);
   if (is_feedback) {
     let data = getFormData();
-    const res = await daKa(data);
+    await daKa(data);
   }
 }
 

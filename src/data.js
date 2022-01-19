@@ -1,21 +1,21 @@
 export default {
   extra: 1,
-  id: "61e7f8704b5da9473fccd0ab",
+  id: "61e60e446eb0834f37e12aba",
   daka_day: "2022-01-19",
   submit_type: "submit",
   networkType: "wifi",
-  member_id: "61e7f87e12dcce41e84a791e",
+  member_id: "61e6c3cd6a441b2b5242b78a",
   op: "add",
   invest: {
     is_tmp: false,
     is_private: false,
-    _id: "61e7f870e7c3e0d92521945d",
+    _id: "61e60e438c1c0621a2d9bf69",
     subject: [
       {
         seq: 0,
         cate: 0,
         inputs_count: 0,
-        _id: "61e7f870e7c3e0d92521945e",
+        _id: "61e60e438c1c0621a2d9bf6a",
         inputs: [],
         item_details: [
           {
@@ -47,7 +47,7 @@ export default {
         seq: 1,
         cate: 3,
         inputs_count: 0,
-        _id: "61e7f870e7c3e0d925219461",
+        _id: "61e60e438c1c0621a2d9bf6d",
         inputs: [],
         item_details: [
           {
@@ -80,7 +80,7 @@ export default {
         seq: 2,
         cate: 0,
         inputs_count: 0,
-        _id: "61e7f870e7c3e0d925219464",
+        _id: "61e60e438c1c0621a2d9bf70",
         inputs: [],
         item_details: [
           {
@@ -129,8 +129,8 @@ export default {
         valid: true,
       },
     ],
-    create_at: "2022-01-19T11:39:28.498Z",
-    update_at: "2022-01-19T11:39:28.498Z",
+    create_at: "2022-01-18T00:48:03.900Z",
+    update_at: "2022-01-18T00:48:03.900Z",
     __v: 0,
     time: 1642594281310,
     day: "2022-01-19",
