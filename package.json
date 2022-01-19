@@ -6,7 +6,6 @@
   "scripts": {
     "test": "node ./src/index.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

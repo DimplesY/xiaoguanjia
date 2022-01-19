@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   extra: 1,
   id: "61e60e446eb0834f37e12aba",
   daka_day: "2022-01-19",
