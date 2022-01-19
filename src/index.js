@@ -4,9 +4,9 @@ const dayjs = require('dayjs')
 const data = require('./data.js')
 
 
-const WX_OPENID = "";
+const WX_OPENID = "oWRkU0QM-jWq02RlslwZMX_Pwlgk";
 
-const MEMBERID = "";
+const MEMBERID = "61e53466af1dadbab1285b15";
 
 /**
  * 返回当前用户是否需要签到
@@ -64,7 +64,7 @@ function daKa(data, openId) {
 
 async function start() {
 	const [is_feedback, _id] = await checkHasDaka(WX_OPENID, MEMBERID);
-	if (!is_feedback) {
+	if (is_feedback) {
 		let data = getFormData();
 		await daKa(data, WX_OPENID);
 		console.log("打卡成功")
@@ -83,4 +83,3 @@ exports.main = async (event, context) => {
 		"code": 200
 	}
 };
-
