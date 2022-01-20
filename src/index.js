@@ -57,7 +57,7 @@ async function checkHasDaka(openId, memberId) {
 function getFormData(MEMBERID) {
 	let currentDate = dayjs().format("YYYY-MM-DD");
 	data.daka_day = currentDate;
-	data.invest.dat = currentDate;
+	data.invest.day = currentDate;
 	data.invest.time = new Date().getTime();
 	data.member_id = MEMBERID;
 	return data;
